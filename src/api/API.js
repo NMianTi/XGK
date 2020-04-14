@@ -26,7 +26,53 @@ export const API_GET_TAGS = function() {
         }
     ]
 }
-
+/*
+* 获取项目信息
+*/
+export const API_GET_PROJECTLIST = function() {
+    let data = [];
+    for(let i = 0; i < 100; i++) {
+        data.push({
+            title: '项目招募，高新分子创新项目',
+            description: '需要一名高分子专业的学生',
+            star: Math.random() * 50000 + 500,
+            auther: 'NMianTi',
+            auther_href: '#',
+            href: '#',
+            time: '2019-2-30 20:12:12',
+        })
+    }
+    return data;
+    return [
+        {
+            title: '项目招募，高新分子创新项目',
+            description: '需要一名高分子专业的学生',
+            star: 12315,
+            auther: 'NMianTi',
+            auther_href: '#',
+            href: '#',
+            time: '2019-2-30 20:12:12',
+        },
+        {
+            title: '项目招募，高新分子创新项目',
+            description: '需要一名高分子专业的学生',
+            star: 12315,
+            auther: 'NMianTi',
+            auther_href: '#',
+            href: '#',
+            time: '2019-2-30 20:12:12',
+        },
+        {
+            title: '项目招募，高新分子创新项目',
+            description: '需要一名高分子专业的学生',
+            star: 12315,
+            auther: 'NMianTi',
+            auther_href: '#',
+            href: '#',
+            time: '2019-2-30 20:12:12',
+        }
+    ]
+}
 
 
 

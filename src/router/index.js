@@ -8,6 +8,7 @@ import Home from '@/views/Home'
 import Login from '@/views/Login'
 import ClassList from '@/views/ClassList'
 import ProjectList from '@/views/ProjectList'
+import Test from '@/views/test'
 
 import Store from '../store';
 
@@ -15,6 +16,10 @@ Vue.use(Router);
 
 const router = new Router({
   routes: [
+    {
+      path: '/test',
+      component: Test
+    },
     {
       path: '/',
       redirect: '/home'
