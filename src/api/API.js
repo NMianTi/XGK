@@ -32,14 +32,16 @@ export const API_GET_TAGS = function() {
 export const API_GET_PROJECTLIST = function() {
     let data = [];
     for(let i = 0; i < 100; i++) {
+        let time = new Date();
+        time.setTime( time.getTime() - Math.floor(Math.random() * (86400000 * 365 * 2) + 60000) );
         data.push({
             title: '项目招募，高新分子创新项目',
             description: '需要一名高分子专业的学生',
-            star: Math.random() * 50000 + 500,
+            star: Math.floor( Math.random() * 50000 + 500 ),
             auther: 'NMianTi',
             auther_href: '#',
             href: '#',
-            time: '2019-2-30 20:12:12',
+            time: time
         })
     }
     return data;
