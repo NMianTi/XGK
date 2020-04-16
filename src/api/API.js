@@ -22,7 +22,7 @@ export const API_GET_TAGS = function() {
         },
         {
             name: '资源分享',
-            src: 'resource'
+            src: '/resourselist'
         }
     ]
 }
@@ -33,7 +33,12 @@ export const API_GET_PROJECTLIST = function() {
     let data = [];
     for(let i = 0; i < 100; i++) {
         let time = new Date();
-        time.setTime( time.getTime() - Math.floor(Math.random() * (86400000 * 365 * 2) + 60000) );
+        // let k = (3600000 * 24 );
+        // let k = (3600000 * 24 * 365);
+        // let k = (3600000);
+        // let k = (60000);
+        let timeRandom = [(3600000 * 24 ), (3600000 * 24 * 365), (3600000), (60000)];
+        time.setTime( time.getTime() - Math.floor(Math.random() * timeRandom[Math.floor(Math.random() * 4)]) );
         data.push({
             title: '项目招募，高新分子创新项目',
             description: '需要一名高分子专业的学生',

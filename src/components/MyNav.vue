@@ -10,8 +10,7 @@
             <ul :class="{'nav-box': true, 'nav-box-close': nav_close}">
                 <li class="nav-item">
                     <router-link to="/login" class="user-login" >
-                        <img class="userHeadPortrait" :src="userHeadPortrait" />
-                        <span class="username">{{username}}</span>
+                        <img class="userHeadPortrait" :src="userHeadPortrait" /><span class="username">{{username}}</span>
                     </router-link>
                 </li>
                 <li class="nav-item" v-for="item in tags" :key="item.ID"><router-link class="nav-a" :to="item.src">{{item.name}}</router-link></li>
@@ -71,7 +70,7 @@ export default {
 }
 </script>
 <style scoped>
-/* 搜索框 */
+/* 搜索框 resource shring*/
 .nav-item:last-child {
     display: none;
 }
@@ -128,8 +127,10 @@ export default {
     
     text-align: center;
     font-size: 4rem;
-    color: rgb(139, 222, 255);
+    /* color: rgb(139, 222, 255); */
+    /* color: linear-gradient(to bottom, rgb(116, 239, 255) , rgb(99, 209, 252)); */
     background-color: rgb(99, 209, 252);
+    background-image: linear-gradient(to bottom, rgb(116, 239, 255) , rgb(99, 209, 252));
 }
 .user-login {
     width: 100%;
@@ -196,7 +197,8 @@ a {
 /* 超小型设备 手机 */
 @media (max-width: 768px) {
     .nav {
-        background-color: rgb(99, 209, 252);;
+        background-color: rgb(99, 209, 252);
+        background-image: linear-gradient(to bottom, rgb(116, 239, 255) , rgb(99, 209, 252));
     }
 }
 /* 小型设备 平板 */
@@ -208,8 +210,9 @@ a {
     }
     .logo {
         float: left;
-        color: rgb(99, 209, 252);
+        /* color: rgb(143, 153, 156); */
         background-color: transparent;
+        
     }
     .open {
         display: none;
@@ -218,6 +221,7 @@ a {
         width: 100%;
         height: 4rem;
         position: static;
+        background-image: linear-gradient(to bottom, rgb(116, 239, 255) , rgb(99, 209, 252));
     }
     .user-login {
         height: 100%;
@@ -253,10 +257,30 @@ a {
         text-decoration: underline;
         background-color: rgb(99, 209, 252);
     }
-    
+
+    .user-login {
+        display: flex;
+        align-items: center;
+        height: 4rem;
+    }
+    .userHeadPortrait {
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+    }
+    .username {
+        margin: 0;
+        margin: 0 10px;
+    }
 }
 /* 中形设备 台式电脑 */
 @media (min-width: 992px) {
+    .nav {
+        /* background-color: red; */
+    }
+    .nav-box {
+        background-image: linear-gradient(to bottom, rgb(116, 239, 255) , rgb(99, 209, 252));
+    }
     /* 搜索框 */
     .nav-item:last-child {
         display: block;
@@ -309,9 +333,8 @@ a {
         border-bottom-right-radius: .5rem;
         transform: translateY(-50%);
     }
-    .nav {
-        /* background-color: red; */
-    }
+    
+    
 }
 /* 大型设备 大台式电脑 */
 @media (min-width: 1200px) {
