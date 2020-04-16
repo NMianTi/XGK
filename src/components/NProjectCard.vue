@@ -47,16 +47,24 @@ export default {
             type: Number
         },
         height: {
-            default: '100px',
+            default: '80px',
         }
     },
     filters: {
         dateFormatting: function(date) {
             let nowTime = new Date();
             if(date.getFullYear() < nowTime.getFullYear() || date.getMonth() < nowTime.getMonth() || date.getDate() < nowTime.getDate()) {
-                return date.getFullYear() + '-' + (Number(date.getMonth())+1) + '-' + date.getDate();
+                if( parseInt(nowTime.getDate()) - parseInt(date.getDate()) == 2) {
+                    return "前天";
+                } else if(parseInt(nowTime.getDate()) - parseInt(date.getDate()) == 1) {
+                    return "昨天";
+                } else return date.getFullYear() + '-' + (parseInt(date.getMonth())+1) + '-' + date.getDate();
             } else if(date.getHours() < nowTime.getHours()) {
-                return Number(nowTime.getHours()) - Number(date.getHours()) + "小时前";
+                return parseInt(nowTime.getHours()) - parseInt(date.getHours()) + "小时前";
+            } else if(date.getMinutes() < nowTime.getMinutes()) {
+                return parseInt(nowTime.getMinutes()) - parseInt(date.getMinutes()) + "分钟前";
+            } else {
+                return "刚刚";
             }
             return date.getFullYear();
         }

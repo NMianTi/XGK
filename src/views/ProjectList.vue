@@ -91,13 +91,12 @@ export default {
     justify-content: space-around;
 
     width: 100%;
-    height: 4rem;
-    line-height: 2rem;
+    height: 2rem;
     margin: 0;
     padding: 0;
 
     text-align: center;
-    background-color: rgba(0, 0, 0, .05);
+    /* background-color: rgba(0, 0, 0, .05); */
 }
 .filtrate-box li {
     list-style: none;

@@ -9,6 +9,7 @@ import Login from '@/views/Login'
 import ClassList from '@/views/ClassList'
 import ProjectList from '@/views/ProjectList'
 import Test from '@/views/test'
+import ResourseList from '@/views/ResourseList'
 
 import Store from '../store';
 
@@ -46,7 +47,13 @@ const router = new Router({
       path: '/projectlist',
       component: ProjectList,
       name: 'ProjectList'
+    },
+    {
+      path: '/resourselist',
+      component: ResourseList,
+      name: 'ResourseList'
     }
+    
   ]
   
 })
