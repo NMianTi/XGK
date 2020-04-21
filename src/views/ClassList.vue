@@ -97,4 +97,10 @@ export default {
     border: 1px solid rgb(15, 187, 255);
     outline-style: none;
 }
+
+@media (max-width: 768px) {
+    .search {
+        padding: 0;
+    }
+}
 </style>

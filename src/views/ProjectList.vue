@@ -122,4 +122,11 @@ export default {
     padding: 0;
     /* background-color: red; */
 }
+
+@media (max-width: 768px) {
+    
+}
+@media (min-width: 768px) {
+
+}
 </style>
