@@ -1,6 +1,7 @@
 import {get, post} from '@/http';
 import {URL_PROFIX, HOST, PORT} from '@/api/Global.js';
 import qs from 'qs';
+import axios from 'axios'
 
 /*
 * 重构 1
@@ -45,7 +46,7 @@ export const API_GET_PROJECTLIST = function() {
             star: Math.floor( Math.random() * 50000 + 500 ),
             auther: 'NMianTi',
             auther_href: '#',
-            href: '#',
+            href: '/projectlist/1',
             time: time
         })
     }
@@ -81,8 +82,29 @@ export const API_GET_PROJECTLIST = function() {
     ]
 }
 
-
-
+/*
+* 获取分类模块
+* 按需查询 单一分类
+* 获取分类列表后查询
+*/
+export function GET_API_GET_CLASSIFEY(title) {
+    let data = {}
+    data.data = (function() {
+        let data = [];
+            for(let i = 0; i < 4 * 3; i++) {
+                data.push({
+                    img_src: require('../assets/logo.png'),
+                    link_src: "#",
+                    title: '信息技术'
+                })
+                
+            }
+            return data
+    })();
+    data.href = "#";
+    data.title = title
+    return data;
+}
 
 
 

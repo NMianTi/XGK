@@ -8,11 +8,17 @@ import Home from '@/views/Home'
 import Login from '@/views/Login'
 import ClassList from '@/views/ClassList'
 import ProjectList from '@/views/ProjectList'
+import Project from '@/views/Project'
 import Test from '@/views/test'
 import ResourseList from '@/views/ResourseList'
 
 import Store from '../store';
+import { test } from 'shelljs';
 
+// import Axios from 'axios';
+// import Vue_Axios from 'vue-axios';
+
+// Vue.use(Axios, Vue_Axios);
 Vue.use(Router);
 
 const router = new Router({
@@ -49,10 +55,15 @@ const router = new Router({
       name: 'ProjectList'
     },
     {
+      path: '/projectlist/:id',
+      component: Project,
+      name: 'Project',
+    },
+    {
       path: '/resourselist',
       component: ResourseList,
       name: 'ResourseList'
-    }
+    },
     
   ]
   
