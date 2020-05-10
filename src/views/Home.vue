@@ -4,24 +4,42 @@
         <main class="main" >
             <!-- 轮播 -->
             <div class="slideshow" ref="slideshow">
+
+                <el-carousel height="calc(100vh - 4rem)">
+                    <el-carousel-item v-for="item in 4" :key="item">
+                    <h3>{{ item }}</h3>
+                    </el-carousel-item>
+                </el-carousel>
+
                 <div class="slideshow-rank">
+                    
                 </div>
             </div>
 
             <div class="project-box">
-
-            </div>
-            <div class="class-box">
-                <div class="class-text">
+                <div class="project-text">
                     <p>
                         足不出门，
                     </p>
                     <p>
                         即可博览群书。
                     </p>
-                </div><img class="class-decoration" src="../assets/home_1.png"/>
+                </div><div class="project-decoration" ></div>
             </div>
-            <div class="resource-box"></div>
+            <div class="class-box">
+                <div class="class-text">
+                    <p>
+                        琳琅满目的优质教学资源
+                    </p>
+                </div><div class="class-decoration" ></div>
+            </div>
+            <div class="resource-box">
+                <div class="resource-text">
+                    <p>
+                        多样化私人定制的课程。
+                    </p>
+                </div><div class="resource-decoration" ></div>
+            </div>
         </main>
         <el-footer></el-footer>
     </div>
@@ -35,6 +53,24 @@ export default {
 }
 </script>
 <style scoped>
+/* 轮播器 */
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+  }
+  
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+
+
 .main {
     max-width: 1200;
     margin: 0 auto;
@@ -76,8 +112,9 @@ export default {
 }
 
 .project-box, .class-box, .resource-box{
+    position: relative;
     width: 100%;
-    height: 100vh;
+    overflow: hidden;
 }
 .project-box {
     background-color: rgb(250, 250, 250);
@@ -87,21 +124,91 @@ export default {
     background-color: rgb(245, 245, 245);
     
 }
+
+/* 文字装饰 */
+.project-text {
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: 10rem 2rem;
+    
+    color: gray;
+    font-size: 1rem;
+    /* background-color: yellow; */
+}
+.project-decoration {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 50%;
+    height: 10rem;
+    /* padding-top: 100px; */
+
+    transform: translateY(-50%);
+    background-image: url('../assets/home.png');
+    background-size: 100%;
+    background-position: 0 0%;
+    background-repeat: no-repeat;
+    background-color: white;
+    /* height: 100px; */
+}
 .class-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    box-sizing: border-box;
     float: left;
     width: 50%;
     height: 100%;
+    padding: 10rem 2rem;
     
-    font-size: 2rem;
-    background-color: yellow;
+    color: gray;
+    font-size: 1rem;
+    /* background-color: yellow; */
 }
 .class-decoration {
-    float: left;
+    position: absolute;
+    top: 50%;
+    right: 0;
+
     width: 50%;
+    height: 10rem;
+    /* padding-top: 100px; */
+
+    transform: translateY(-50%);
+    background-image: url('../assets/home.png');
+    background-size: 100%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-color: white;
+    /* height: 100px; */
+}
+
+.resource-text {
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: 10rem 2rem;
+    
+    color: gray;
+    font-size: 1rem;
+    /* background-color: yellow; */
+}
+.resource-decoration {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 50%;
+    height: 10rem;
+    /* padding-top: 100px; */
+
+    transform: translateY(-50%);
+    background-image: url('../assets/home.png');
+    background-size: 100%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
     /* height: 100px; */
 }
 

@@ -57,7 +57,6 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 /* 搜索框 */
 .search {
     display: flex;
@@ -100,7 +99,7 @@ export default {
 
 @media (max-width: 768px) {
     .search {
-        padding: 0;
+        display: none;
     }
 }
 </style>
